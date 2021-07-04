@@ -1,0 +1,5 @@
+package com.marianna.todo.repositories;
+
+public interface TodoRepository {
+
+}

@@ -1,0 +1,9 @@
+2021-07-04 15:21:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO" not found; SQL statement:
+insert into todo (id, data_para_finalizar, descricao, finalizado, titulo) values (null, ?, ?, ?, ?) [42102-200]
+2021-07-04 15:21:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO" not found; SQL statement:
+insert into todo (id, data_para_finalizar, descricao, finalizado, titulo) values (null, ?, ?, ?, ?) [42102-200]
+2021-07-04 15:22:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TODO" not found; SQL statement:
+insert into todo (id, data_para_finalizar, descricao, finalizado, titulo) values (null, ?, ?, ?, ?) [42102-200]
