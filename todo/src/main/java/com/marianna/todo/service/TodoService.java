@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.marianna.todo.domain.Todo;
 import com.marianna.todo.repositories.TodoRepository;
+import com.marianna.todo.service.exception.ObjectNotFoundexception;
 
 @Service
 public class TodoService {
@@ -17,7 +18,7 @@ public class TodoService {
 	
 	public Todo findById(Integer id) {
 		Optional<Todo> obj = repository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundexception("Objeto não encontrado! Id: " + id + " , Tipo: " + Todo.class));
 	}
 
 	public List<Todo> findAllOpen() {
@@ -39,6 +40,20 @@ public class TodoService {
 	public Todo create(Todo obj) {
 		obj.setId(null);
 		return repository.save(obj);
+	}
+
+	public void delete(Integer id) {
+		repository.deleteById(id);		
+	}
+
+	public Todo update(Integer id, Todo obj) {
+		Todo newObj = findById(id);
+		newObj.setTitulo(obj.getTitulo());
+		newObj.setDate(obj.getDate());
+		newObj.setDescricao(obj.getDescricao());
+		newObj.setFinalizado(obj.getFinalizado());
+		return repository.save(newObj);
+		
 	}
 
 
